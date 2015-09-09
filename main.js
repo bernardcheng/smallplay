@@ -5,7 +5,7 @@ $(function(){
 
   $(window).scroll(function() {
     if (snsWrapper && fixedSnsContent) {
-      if ($(window).scrollTop() && newPostsOffsetTop) {
+      if ($(window).scrollTop() > newPostsOffsetTop) {
         $(fixedSnsContent).removeClass('fadein');
       } else {
         $(fixedSnsContent).addClass('fadein');
