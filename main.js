@@ -1,7 +1,7 @@
 $(function(){
   var snsWrapper = document.getElementById('wrap-sns-pc');
   var fixedSnsContent = document.getElementById('fixed-sns-pc');
-  var newPostsOffsetTop = $('#wrap-new-posts').offset().top;
+  var newPostsOffsetTop = $(document.getElementId('wrap-new-posts')).offset().top;
 
   $(window).scroll(function() {
     if (snsWrapper && fixedSnsContent) {
