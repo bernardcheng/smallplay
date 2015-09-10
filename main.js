@@ -5,9 +5,8 @@ $(function(){
 
   $(window).scroll(function() {
     if (snsWrapper && fixedSnsContent) {
-        var isScrolledToPos = $(window).scrollTop() > newPostsOffsetTop
-        $(fixedSnsContent).toggleClass('fadein', isScrolledToPos);
-      }
+      var isScrolledToPos = $(window).scrollTop() > newPostsOffsetTop
+      $(fixedSnsContent).toggleClass('fadein', isScrolledToPos);
     }
   });
 })
