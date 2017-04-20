@@ -1,7 +1,7 @@
 {
   "name": "smallplay",
   "version": "1.0.0",
-  "description": "A lib for quick and simple dom manupolation.",
+  "description": "A lib for quick and simple dom manupulation.",
   "main": "./dist/main.js",
   "scripts": {
     "test": "gulp test"
