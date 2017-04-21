@@ -1,4 +1,6 @@
 export function run() {
-  console.log('Start running sticky');
+  return 'Start running sticky';
 }
+
+export default run;
 
