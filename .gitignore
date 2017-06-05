@@ -4,6 +4,9 @@
 # Swap files
 *.swp
 
+# .NET file
+package-lock.json
+
 # General 
 tmp
 node_modules

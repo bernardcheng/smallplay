@@ -1,11 +1,13 @@
 {
   "files": [
     "src/main.ts",
-    "src/sticky.ts"
+    "src/sticky.ts",
+    "src/progress.ts"
   ],
   "compilerOptions": {
     "noImplicitAny": true,
-    "target": "es5"
+    "target": "es6",
+    "module": "commonjs"
   }
 }
 
