@@ -1,6 +1,6 @@
-export function run() {
+export function runSticky() {
   return 'Start running sticky';
 }
 
-export default run;
+export default runSticky;
 

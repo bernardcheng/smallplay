@@ -1,3 +1,6 @@
-import {run} from './sticky';
+import {runSticky} from './sticky';
+import {runProgress} from './progress';
 
-console.log(run());
+console.log(runSticky());
+console.log(runProgress());
+
