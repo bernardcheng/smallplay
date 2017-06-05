@@ -1,6 +1,11 @@
+class Sticky {
+  constructor() {
+    console.log('test');
+  }
+}
+
 export function runSticky() {
-  return 'Start running sticky';
+  new Sticky();
 }
 
 export default runSticky;
-
