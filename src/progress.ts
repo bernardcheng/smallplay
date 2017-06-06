@@ -1,5 +1,7 @@
-export function runProgress() {
-  return 'Start running progress';
-}
+export class Progress {
+  private targetEl = document.getElementById('sp-progress-bar');
 
-export default runProgress;
+  constructor() {
+    console.log('test');
+  }
+}

@@ -1,5 +1,18 @@
-import {runSticky} from './sticky';
-import {runProgress} from './progress';
+import {Sticky} from './sticky';
+import {Progress} from './progress';
 
-console.log(runSticky());
-console.log(runProgress());
+/**
+ * @experimental
+ */
+export class Application {
+  constructor() {
+
+  }
+
+  runInitializer() {
+    new Sticky();
+    new Progress();
+  }
+}
+
+new Application();
