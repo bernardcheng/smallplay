@@ -1,7 +1,6 @@
 export class Progress {
-  private targetEl = document.getElementById('sp-progress-bar');
+  private targetEl: any = document.getElementById('sp-progress-bar');
 
   constructor() {
-    console.log('test');
   }
 }

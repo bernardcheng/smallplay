@@ -5,14 +5,18 @@ import {Progress} from './progress';
  * @experimental
  */
 export class Application {
-  constructor() {
+  private config: any;
 
+  constructor(optConfig?: any) {
+    this.config = optConfig || {};
+
+    this.runInitializer();
   }
 
   runInitializer() {
-    new Sticky();
+    new Sticky(this.config);
     new Progress();
   }
 }
 
-new Application();
+let app = new Application();
