@@ -1,6 +1,7 @@
 {
   "files": [
     "src/main.ts",
+    "src/element.ts",
     "src/sticky.ts",
     "src/progress.ts"
   ],

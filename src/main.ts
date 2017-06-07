@@ -1,5 +1,22 @@
-import {runSticky} from './sticky';
-import {runProgress} from './progress';
+import {Sticky} from './sticky';
+import {Progress} from './progress';
 
-console.log(runSticky());
-console.log(runProgress());
+/**
+ * @experimental
+ */
+export class Application {
+  private config: any;
+
+  constructor(optConfig?: any) {
+    this.config = optConfig || {};
+
+    this.runInitializer();
+  }
+
+  runInitializer() {
+    new Sticky(this.config);
+    new Progress();
+  }
+}
+
+let app = new Application();
