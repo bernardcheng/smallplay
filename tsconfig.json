@@ -6,7 +6,7 @@
     "src/progress.ts"
   ],
   "compilerOptions": {
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "target": "es6",
     "module": "commonjs"
   }
