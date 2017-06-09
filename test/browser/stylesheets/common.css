@@ -1,6 +1,6 @@
 html,
 body {
-  min-height: 150%;
+  height: 1500px;
   position: relative;
 }
 
@@ -20,5 +20,6 @@ body {
 }
 
 #sp-sticky-start.sticky-start-test {
-  margin-top: 200px;
+  top: 200px;
+  position: absolute;
 }

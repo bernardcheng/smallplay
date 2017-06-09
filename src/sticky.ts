@@ -19,19 +19,15 @@ export class Sticky {
   private init() {
     this.startOffset = this.startEl.getBoundingClientRect();
 
-    window.addEventListener('scroll', this.stickyMonitor);
+    window.addEventListener('scroll', this.stickyMonitor, false);
   }
 
-  private stickyMonitor = () => {
+  private stickyMonitor = (e) => {
     let docHeight: number =
         (this.doc && this.doc.scrollTop || this.body && this.body.scrollTop ||
              0);
 
     this.targetEl.classList.toggle('active', docHeight > this.startOffset.top);
-  };
-
-  result() {
-    return 'Sticky';
   };
 }
 
