@@ -19,36 +19,33 @@ describe('A sticky behavior', function() {
   });
 
   beforeEach(function(done) {
-    setTimeout(function() {
-      addDefaultHTML();
-      stickyInstance = new Sticky();
-      done();
-    });
+    addDefaultHTML();
+    stickyInstance = new Sticky();
+
+    setTimeout(done, 500);
   });
 
   it('should appear while scrolling y-axis to 700', function(done) {
     window.scrollTo(0, 700);
-    setTimeout(function() {
-      expect(headerEl.classList.contains('active')).to.be.true;
-      done();
-    }, 1000);
+    expect(headerEl.classList.contains('active')).to.be.true;
+
+    setTimeout(done, 500);
   });
 
   it('should not appear while scrolling y-axis to 100', function(done) {
     window.scrollTo(0, 100);
-    setTimeout(function() {
-      expect(headerEl.classList.contains('active')).to.be.false;
-      done();
-    }, 1000);
+    expect(headerEl.classList.contains('active')).to.be.false;
+
+    setTimeout(done, 500);
   });
 
-  afterEach(function() {
+  afterEach(function(done) {
     stickyInstance = null;
+    let mainNode = document.getElementsByTagName('main')[0];
+    body.removeChild(mainNode);
     window.scrollTo(0, 0);
-    setTimeout(function() {
-      let mainNode = document.getElementsByTagName('main')[0];
-      body.removeChild(mainNode);
-    });
+
+    setTimeout(done, 500);
   });
 
   function addDefaultCSS() {
