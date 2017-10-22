@@ -1,6 +1,10 @@
+html {
+  overflow: auto;
+}
+
 html,
 body {
-  height: 1500px;
+  height: 200%;
   position: relative;
 }
 

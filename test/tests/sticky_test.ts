@@ -8,34 +8,47 @@ import { expect } from 'chai';
 import 'mocha';
 
 
-describe('A sticky behavior', () => {
-  let stickyInstance, headerEl, startEl;
-  addDefaultCSS();
+describe('A sticky behavior', function() {
+  let stickyInstance;
+  let headerEl, startEl;
+  let body;
+  let main;
 
-  beforeEach(() => {
-    document.body.innerHTML = __html__['test/browser/index.html'];
-    headerEl = document.getElementById('sp-sticky-target');
-    startEl = document.getElementById('sp-sticky-start');
-    stickyInstance = new Sticky();
+  before(function() {
+    addDefaultCSS();
   });
 
-  it('should appear while scrolling y-axis to 700', () => {
+  beforeEach(function(done) {
+    setTimeout(function() {
+      addDefaultHTML();
+      stickyInstance = new Sticky();
+      done();
+    });
+  });
+
+  it('should appear while scrolling y-axis to 700', function(done) {
     window.scrollTo(0, 700);
-
-    expect(headerEl.classList.contains('active')).to.be.true;
+    setTimeout(function() {
+      expect(headerEl.classList.contains('active')).to.be.true;
+      done();
+    }, 1000);
   });
 
-  it('should not appear while scrolling y-axis to 100', () => {
+  it('should not appear while scrolling y-axis to 100', function(done) {
     window.scrollTo(0, 100);
-
-    expect(headerEl.classList.contains('active')).to.be.false;
+    setTimeout(function() {
+      expect(headerEl.classList.contains('active')).to.be.false;
+      done();
+    }, 1000);
   });
 
-  afterEach(() => {
-    let bodeNode = document.body;
-    while (bodeNode.firstChild) {
-       bodeNode.removeChild(bodeNode.firstChild);
-    }
+  afterEach(function() {
+    stickyInstance = null;
+    window.scrollTo(0, 0);
+    setTimeout(function() {
+      let mainNode = document.getElementsByTagName('main')[0];
+      body.removeChild(mainNode);
+    });
   });
 
   function addDefaultCSS() {
@@ -46,5 +59,14 @@ describe('A sticky behavior', () => {
     link.href = 'base/test/browser/stylesheets/common.css';
     link.media = 'all';
     head.appendChild(link);
+  }
+
+  function addDefaultHTML() {
+    body = document.body;
+    main = document.createElement('main');
+    main.innerHTML = __html__['test/browser/index.html'];
+    body.insertBefore(main, body.firstChild);
+    headerEl = document.getElementById('sp-sticky-target');
+    startEl = document.getElementById('sp-sticky-start');
   }
 });

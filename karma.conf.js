@@ -21,9 +21,17 @@ module.exports = function(config) {
         pattern: 'src/**/*.ts', included: false, served: false
       },
       {
-        pattern: 'test/browser/stylesheets/common.css', included: false, served: true
+        pattern: 'test/browser/stylesheets/common.css', included: false
       }
     ],
+
+
+    client: {
+      mocha: {
+        opts: 'test/mocha.opts' // You can set opts to equal true then plugin will load opts from default location 'test/mocha.opts'
+        // delay: true
+      }
+    },
 
 
     // list of files to exclude
@@ -76,7 +84,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
