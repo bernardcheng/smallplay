@@ -28,16 +28,20 @@ describe('A sticky behavior', function() {
 
   it('should appear while scrolling y-axis to 700', function(done) {
     window.scrollTo(0, 700);
-    expect(headerEl.classList.contains('active')).to.be.true;
 
-    setTimeout(done, 500);
+    setTimeout(function() {
+      expect(headerEl.classList.contains('active')).to.be.true;
+      done();
+    }, 500);
   });
 
   it('should not appear while scrolling y-axis to 100', function(done) {
     window.scrollTo(0, 100);
-    expect(headerEl.classList.contains('active')).to.be.false;
 
-    setTimeout(done, 500);
+    setTimeout(function() {
+      expect(headerEl.classList.contains('active')).to.be.false;
+      done();
+    }, 500);
   });
 
   afterEach(function(done) {
