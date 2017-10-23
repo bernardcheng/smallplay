@@ -6,6 +6,7 @@ import { Sticky } from '../../src/sticky';
 import { expect } from 'chai';
 // if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
 import 'mocha';
+import 'babel-polyfill';
 
 
 describe('A sticky behavior', function() {

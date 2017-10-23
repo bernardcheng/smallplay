@@ -1,1 +1,1 @@
---delay -r ts-node/register test/**/*.ts
+--delay -r babel-polyfill -r ts-node/register test/**/*.ts
