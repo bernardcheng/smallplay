@@ -100,7 +100,7 @@ module.exports = function(config) {
         [
           'tsify',
           {
-            target: 'es6'
+            target: 'es2015'
           }
         ]
       ],
@@ -109,7 +109,7 @@ module.exports = function(config) {
         [
           'babelify',
           {
-            presets: ['es2015'],
+            presets: ['es2015', 'stage-0'],
             extensions: ['.tsx', '.ts']
           }
         ]
